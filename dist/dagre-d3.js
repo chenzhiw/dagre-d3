@@ -178,7 +178,7 @@ function createEdgeLabels(selection, g) {
     var edge = g.edge(e),
         label = addLabel(d3.select(this), g.edge(e), 0, 0).classed("label", true),
         bbox = label.node().getBBox();
-
+    edge.labelelem = this;
     if (edge.labelId) { label.attr("id", edge.labelId); }
     if (!_.has(edge, "width")) { edge.width = bbox.width; }
     if (!_.has(edge, "height")) { edge.height = bbox.height; }
